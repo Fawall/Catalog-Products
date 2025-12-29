@@ -9,11 +9,19 @@ namespace src.Model
         public int Id { get; set; }
 
         [Required(ErrorMessage = "What name of product?")]
-        [StringLength(maximumLength: 10, MinimumLength = 3  )]
+        [StringLength(maximumLength: 10, MinimumLength = 3)]
         public string Name { get; set; }
 
         [Required]
-        [StringLength(maximumLength: 10, MinimumLength: 3 )]
+        [StringLength(maximumLength: 10, MinimumLength = 3)]
         public string Category { get; set; }
+
+        public Catalog(string name, string category)
+        {
+            Name = name;
+            Category = category;       
+        }
     }
+
+
 }
